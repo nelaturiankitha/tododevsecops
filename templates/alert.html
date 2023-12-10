@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <!-- Include a script that fetches the alert message and displays it as an alert -->
+    <script>
+        // Fetch the alert message from the Flask API
+        fetch('/api/get_alert_message')
+            .then(response => response.json())
+            .then(data => {
+                // Display the alert with the message
+                alert(data.alert_message);
+            })
+            .catch(error => {
+                // Handle errors if needed
+                console.error('Error fetching alert message:', error);
+            });
+    </script>
+</body>
+</html>
